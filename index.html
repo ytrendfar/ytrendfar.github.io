@@ -1,33 +1,90 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Welcome</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Welcome</title>
         <style>
             *{
                 padding: 0%;
                 margin: 0%;
             }
             html,body{
-                height: 100%;
+                height: 170%;
             }
-            body{
-                background: url(img/darkTheme.jpg);
-                position: center;
+            #head{
+                height: 22.5%;
+                background: url(img/mt.jpg) no-repeat;
+                background-size: 100%;
+                background-position: bottom center;
+                background-color: aquamarine;
             }
-            h1{
+            #head>a{
+                font-size: 25px;
+            }
+            #header{
+                float: right;
+                font-size: 15px;
+            }
+            #body{
+                height: 62.5%;
+                background-color: rgb(24, 26, 27);
+            }
+            #foot{
+                height: 15%;
+                background-color: rgb(24, 26, 27);
+                color: grey;
                 text-align: center;
+                line-height: 50px;
             }
-            h2{
-                text-align: center;
-                color: tomato;
+            #foot a{
+                text-decoration: underline;
+                font-family:Arial, Helvetica, sans-serif;
+                color: rgb(151, 151, 151);
+                margin: 0px;
+            }
+            #foot a:hover{
+                color: rgb(91, 227, 255);
+            }
+            #foot img{
+                height: 50px;
+            }
+            #foot img:hover{
+                content: url(img/hover.png);
+            }
+            a{
+                text-decoration: none;
+                color: rgb(232, 230, 227);
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                margin: 20px;
+                line-height: 50px;
+            }
+            hr{
+                color: rgb(53, 57, 59);
+                border: solid 1px;
             }
         </style>
     </head>
     <body>
-        <h1>Welcome to visit My Page</h1>
-        <h1>Now Creating</h1>
-        <h2>There're some writing</h2>
+        <div id="head">
+            <a href="#">Configurable Title</a>
+            <div id="header">
+                <a href="#">HOME</a>
+                <a href="#">ARCHIVES</a>
+                <a href="#">TAGS</a>
+                <a href="#">CATEGORIES</a>
+            </div>
+        </div>
+        <div id="body">
+            <a href="#">Welcome to Clean Blog</a>
+        </div>
+        <hr>
+        <div id="foot">
+            <br>
+            <a href="https://github.com/ytrendfar/ytrendfar.github.io" target="_blank"><img src="img/link.png"></a>
+            <p>© 2022 YTrendFar</p>
+            <p>The theme is modeled after <a href="https://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/" target="_blank">Clean Blog</a></p>
+            <p>Adapted by Young</p>
+        </div>
     </body>
 </html>
