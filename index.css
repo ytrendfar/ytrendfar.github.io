@@ -1,0 +1,136 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+html,body{
+    height: 170%;
+    background-color: rgb(24, 26, 27);
+}
+
+#head{
+    height: 22.5%;
+    background: url(img/mt.jpg) no-repeat;
+    background-size: auto;
+    background-position: bottom center;
+    background-color: aquamarine;  
+}
+#head>a{
+    font-size: 25px;
+    transition: 0.5s;
+}
+#header{
+    float: right;
+    font-size: 15px;
+}
+#header a{
+    transition: 0.5s;
+}
+#head a:hover{
+    color: rgb(197, 192, 187);
+    transition: 0.5s;
+}
+#head h1{
+    width: 500px;
+    margin: auto;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 200;
+    transition: 0.5s;
+}
+#head h1:hover{
+    transform: scale(1.5);
+    transition: 1s;
+}
+#head h2{
+    width: 50%;
+    margin: auto;
+    font-size: 20px;
+    font-weight: 200;
+    text-align: center;
+    transition: 0.5s;
+}
+#head h2:hover{
+    transform: scale(1.5);
+    transition: 1s;
+}
+
+
+
+#body{
+    height: 62.5%;
+    background-color: rgb(24, 26, 27);
+    font-size: 30px;
+    
+}
+#body a:hover{
+    color:rgb(91, 227, 255);
+    transition: 0.5s;
+    transform: scale(1.15);
+}
+#body a{
+    width: 100%;
+    transition: 0.5s;
+    display: block;
+    color: rgb(192, 186, 178);
+    margin-left: 50px;
+}
+#body p{
+    color: rgb(232, 230, 227);
+    line-height: 50px;
+    font-size: 50px;
+    font-weight: 100;
+    text-align: center;
+}
+.container{
+    max-width: 750px;
+    margin: auto;
+}
+
+
+
+#foot{
+    height: 15%;
+    background-color: rgb(24, 26, 27);
+    color: grey;
+    text-align: center;
+    line-height: 50px;
+}
+#foot a{
+    text-decoration: underline;
+    font-family:Arial, Helvetica, sans-serif;
+    color: rgb(151, 151, 151);
+    margin: 0px;
+    transition: color 0.5s;
+}
+#foot a:hover{
+    color: rgb(91, 227, 255);
+    transition: 1s;
+}
+#foot img{
+    height: 50px;
+}
+#foot img:hover{
+    content: url(img/hover.png);
+}
+a{
+    text-decoration: none;
+    color: rgb(232, 230, 227);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 20px;
+    line-height: 50px;
+}
+hr{
+    color: rgb(53, 57, 59);
+    border: solid 1px;
+}
+
+
+@media screen and (max-width: 660px){
+#header a{
+    display: none;
+}
+#hr{
+    display: block;
+}
+
+}
