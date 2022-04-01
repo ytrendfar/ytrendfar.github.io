@@ -5,109 +5,12 @@
         <link rel="icon" type="image/x-icon" href="img/icon.ico">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Welcome</title>
-        <style>
-            *{
-                padding: 0%;
-                margin: 0%;
-            }
-            html,body{
-                height: 170%;
-            }
-            #head{
-                height: 22.5%;
-                background: url(img/mt.jpg) no-repeat;
-                background-size: auto;
-                background-position: bottom center;
-                background-color: aquamarine;
-                
-            }
-            #head>a{
-                font-size: 25px;
-                transition: color 0.5s;
-            }
-            #header{
-                float: right;
-                font-size: 15px;
-            }
-            #header a{
-                transition: color 0.5s;
-            }
-            #head a:hover{
-                color: rgb(197, 192, 187);
-                transition: 0.5s;
-            }
-            #head h1{
-                text-align: center;
-                font-size: 50px;
-                font-weight: 200;
-                transition: 0.5s;
-            }
-            #head h1:hover{
-                transform: scale(0.8);
-                transition: 1s;
-            }
-            #head h2{
-                font-size: 20px;
-                font-weight: 200;
-                text-align: center;
-                transition: 0.5s;
-            }
-            #head h2:hover{
-                transform: scale(0.8);
-                transition: 1s;
-            }
-            #body{
-                height: 62.5%;
-                background-color: rgb(24, 26, 27);
-            }
-            #body a:hover{
-                color:rgb(91, 227, 255);
-                transition: 1s;
-            }
-            #body a{
-                transition: 0.5s;
-            }
-
-            #foot{
-                height: 15%;
-                background-color: rgb(24, 26, 27);
-                color: grey;
-                text-align: center;
-                line-height: 50px;
-            }
-            #foot a{
-                text-decoration: underline;
-                font-family:Arial, Helvetica, sans-serif;
-                color: rgb(151, 151, 151);
-                margin: 0px;
-                transition: color 0.5s;
-            }
-            #foot a:hover{
-                color: rgb(91, 227, 255);
-                transition: 1s;
-            }
-            #foot img{
-                height: 50px;
-            }
-            #foot img:hover{
-                content: url(img/hover.png);
-            }
-            a{
-                text-decoration: none;
-                color: rgb(232, 230, 227);
-                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-                margin: 20px;
-                line-height: 50px;
-            }
-            hr{
-                color: rgb(53, 57, 59);
-                border: solid 1px;
-            }
-        </style>
+        <link href="index.css" rel="stylesheet" >
     </head>
     <body>
         <div id="head">
             <a href="#">Configurable Title</a>
+            <hr hidden id="hr">
             <div id="header">
                 <a href="#">HOME</a>
                 <a href="#">ARCHIVES</a>
@@ -119,7 +22,29 @@
             <h2>Full featured, responsive Hexo theme</h2>
         </div>
         <div id="body">
-            <a href="#">Welcome to Clean Blog</a>
+            <br><br>
+            <p>Welcome to Clean Blog</p>
+            <br><br>
+            <div class="container">
+                <a href="#">HTML Note</a>
+                <hr>
+            </div>
+            <div class="container">
+                <a href="#">CSS Note</a>
+                <hr>
+            </div>
+            <div class="container">
+                <a href="#">JavaScript Note</a>
+                <hr>
+            </div>
+            <div class="container">
+                <a href="#">C# Note</a>
+                <hr>
+            </div>
+            <div class="container">
+                <a href="#">MySQL Note</a>
+                <hr>
+            </div>
         </div>
         <hr>
         <div id="foot">
