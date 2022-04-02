@@ -1,22 +1,62 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <link rel="icon" type="image/x-icon" href="img/icon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Young</title>
-    <style>
-        html,body{
-            height: 100%;
-            background-color: rgb(24, 26, 27);
-        }
-        *{
-            padding: 0%;
-            margin: 0%;
-        }
-    </style>
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" type="image/x-icon" href="img/icon.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Welcome</title>
+        <link href="index.css" rel="stylesheet" >
+    </head>
+    <body>
+        <div id="flexContent" hidden>
+            
+        </div>
+        <div id="head">
+            <a>Configurable Title</a>
+            <div id="flexBox" onclick="open()" hidden><p>| | |</p></div>
+            <hr hidden id="hr">
+            <div id="header">
+                <a href="#">HOME</a>
+                <a href="#">ARCHIVES</a>
+                <a href="#">TAGS</a>
+                <a href="#">CATEGORIES</a>
+            </div>
+            <br><br><br>
+            <h1>Clean Blog</h1>
+            <h2>Full featured, responsive Hexo theme</h2>
+        </div>
+        <div id="body">
+            <br><br>
+            <p>Notes</p>
+            <br><br>
+            <div class="container">
+                <a href="#">HTML Note</a>
+                <hr>
+            </div>
+            <div class="container">
+                <a href="#">CSS Note</a>
+                <hr>
+            </div>
+            <div class="container">
+                <a href="#">JavaScript Note</a>
+                <hr>
+            </div>
+            <div class="container">
+                <a href="#">C# Note</a>
+                <hr>
+            </div>
+            <div class="container">
+                <a href="#">MySQL Note</a>
+                <hr>
+            </div>
+        </div>
+        <hr>
+        <div id="foot">
+            <br>
+            <a href="https://github.com/ytrendfar/ytrendfar.github.io" target="_blank"><img src="img/link.png"></a>
+            <p>© 2022 YTrendFar</p>
+            <p>The theme is modeled after <a href="https://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/" target="_blank">Clean Blog</a></p>
+            <p>Adapted by <a href="Young.html">Young</a></p>
+        </div>
+    </body>
 </html>
