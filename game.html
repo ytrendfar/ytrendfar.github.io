@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--    目前还没解决的问题
+   // 1. 空输入和超限制输入（已解决）原因：别给字符串数字比大小
+      2.有生之年的css装修
+   // 3.  实现再玩一次
+   // 4. 随机生成数值为0
+   // 5. 实现一个小说明
+-->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="icon" type="image/x-icon" href="img/ico.ico">
+    <title>Guess Game</title>
+    <link type="text/css" rel="stylesheet" href="game.css">
+</head>
+<body>
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="简介" id="about">
+        <h1>这是一个猜数游戏</h1><br>
+        <p>你需要在尽可能少的次数下猜中未知数</p><br>
+        <p>范围是0~100的开区间</p><br>
+        <p>未知数是随机的</p><br>
+        <button onclick="hid()">
+            明白了!
+        </button>
+        </div>
+    <h1 hidden id="title">Guess A Number</h1>
+    <br>
+    <h2 id="big" hidden>你猜的数太大了!</h2>
+    <h2 id="small" hidden>你猜的数太小了!</h2>
+    <h2 id="right" hidden>你猜对了!</h2>
+    <div id="div">
+        <h2 hidden id="type">请输入范围内任意数字</h2>
+        <h5 id="range" hidden>当前范围:0~100</h5>
+        <div>
+            <input type="number" autofocus id="in" max="99" min="1" placeholder="将要输入的值..." hidden>
+            <br><br>
+            <button type="button" onclick="upload()" id="button" hidden>确定</button>
+        </div>
+    </div><br>
+    <h2 id="out"></h2><br>
+    <div>
+    <button onclick="history.go(0)" id="playAgain">再玩一次</button>
+    </div>
+    <script type="text/javascript" src="game.js"></script>   
+</body>
+</html>
