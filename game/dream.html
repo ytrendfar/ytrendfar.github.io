@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<!-- 任务繁重...-->
+<head>
+    <meta charset="UTF-8">
+    <title>New Game!</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/dream.css">
+</head>
+<body>
+    <br>
+    <!--简介-->
+    <div class="简介" id="about">
+        <br>
+        <h1>这是一个策略游戏</h1><br>
+        <p>你要和对手进行一次回合制战斗</p>
+        <p>总共有三种攻击、两种防御、一种回复</p>
+        <p>每一回合开始时,你和对手要同时选择这六种动作中的一种以施放</p>
+        <p>一个回合有三秒的选择时间</p><br>
+        <p>攻击一可以被防御一抵消,攻击一消耗一格'气'</p>
+        <p>攻击二可以被防御二抵消,但不能被防御一抵消,攻击二消耗两格'气'</p>
+        <p>攻击二可以抵消攻击一</p>
+        <p>防御一无消耗,仅可抵消攻击一</p>
+        <p>防御二消耗一格'气',仅可抵消攻击二</p>
+        <p>防御二不可以抵消攻击一</p>
+        <p>攻击三不可被抵消,消耗三格'气'</p>
+        <p>攻击三可以抵消攻击一、二</p>
+        <p>每次回复会使你的'气'加一,游戏开始时双方的'气'为零</p><br>
+        <p>受到有效攻击的一方视为失败</p>
+        <button name="button" type="button" onclick="hidAbout()">明白了!</button><br>
+    </div>
+    <!--选择-->
+    <div class="选择" id="choose"><br>
+        <h1>请选择你的对手</h1><br> 
+        <div class="left" onclick="leftChoose()">AI</div>
+        <div class="right" onclick="rightChoose()">另一位玩家</div>
+    </div>
+    <!--按键简介-->
+    <div class="按键提示" id="keyboardInput" >
+        <div class="按键提示左" id="keyboardInputLeft">
+            <red><h3>Player1</h3></red>
+            <h3>QWE分别为攻击一、二、三</h3>
+            <h3>AS分别为防御一、二</h3>
+            <h3>D为集气</h3>
+            <h3>注意勿开大写锁定</h3>
+            <h3>准备好了就按D!</h3>
+        </div>
+        <div class="按键提示右" id="keyboardInputRight">
+            <red><h3>Player2</h3></red>
+            <h3>456分别为攻击一、二、三</h3>
+            <h3>12分别为防御一、二</h3>
+            <h3>3为集气</h3>
+            <h3>注意勿关小写键盘</h3>
+            <h3>准备好了就按3!</h3>
+        </div>
+    </div>
+    <!--按Enter开始-->
+    <div id="start" class="开始">
+        Start!
+        <p id="continue">press Enter to continue!</p>
+    </div>
+    <h1 id="round" class="回合"></h1><br>
+    <h3 id="time" class="计时"></h3>
+    <div id="inf1">
+        <h1 id="d">GAS</h1>
+        <h1 id="q">ATTACK 1</h1>
+        <h1 id="w">ATTACK 2</h1>
+        <h1 id="e">ATTACK 3</h1>
+        <h1 id="a">GUARD 1</h1>
+        <h1 id="s">GUARD 2</h1>
+    </div>
+    <div id="inf2">
+        <h1 id="_3">GAS</h1>
+        <h1 id="_4">ATTACK 1</h1>
+        <h1 id="_5">ATTACK 2</h1>
+        <h1 id="_6">ATTACK 3</h1>
+        <h1 id="_1">GUARD 1</h1>
+        <h1 id="_2">GUARD 2</h1>
+    </div>
+    <h1 id="draw">DRAW!</h1>
+    <h1 id="dead1">PLAYER1 DEAD!</h1>
+    <h1 id="dead2">PLAYER2 DEAD!</h1>
+    <script src="../JS/dream.js"></script>
+</body>
+</html>
