@@ -1,0 +1,184 @@
+*{
+    margin:0%;
+    padding: 0%;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+body{
+    background-color: #33cccc;
+    opacity: 0.8;
+    background-image:  linear-gradient(#006363 1px, transparent 1px), linear-gradient(to right, #006363 1px, #33cccc 1px);
+    background-size: 20px 20px;
+    align-items: center;
+    justify-content: center; 
+    display: flex;
+    overflow: hidden;
+}
+button{
+    display: block;
+    height: 30px;
+    margin: auto;
+} 
+/* 简介 */
+.简介>button{
+    background:#5ccccc;
+    border-radius: 10px/10px;
+}
+h1,p,h3{
+    text-align: center;
+    height: 36px;
+}
+.简介{
+    border-radius: 58px;
+    background: #5ccccc;
+    box-shadow:  35px 35px 70px #4eadad,
+                -35px -35px 70px #6aebeb;
+    width: 500px;
+    border: solid 0.5px;
+    transition: 1s;
+    position: absolute;
+    top:-100%;
+    animation: move 1.2s forwards;
+}
+@keyframes move{
+    from{
+        top:-100%;
+    }
+    to{
+        top:5%
+    }
+}
+@keyframes moveOut{
+    from{
+        top:5%
+    }
+    to{
+        top:-100%;
+    }
+}
+/* 选择 */
+.left{
+    float: left;
+    background-color: rgb(84, 204, 204);
+    border-radius: 24px 0 0 24px;
+}     
+.right{
+    float: right;
+    background-color: rgb(84, 204, 204);
+    border-radius: 0 24px 24px 0;
+}
+.left,.right{
+    height: 80px;
+    width: 50%;
+    line-height: 80px;
+   
+    transition: 1s;
+}
+.选择{
+    width: 60%;
+    text-align: center;
+    position: absolute;
+    bottom: -50%;
+    transition: 1.2s;
+}
+.选择>div{
+    font-size: larger;
+    box-shadow: 0 0 5px ;
+    
+}
+.left:hover,
+.right:hover{
+    background-color: #f99;
+    z-index: 999;
+    transition: 0.5s;
+}
+.left:active,
+.right:active{
+    background-color: rgb(95, 203, 230);
+    z-index: 999;
+}
+/*按键提示*/
+red{
+    color: rgb(255, 0, 0);
+}
+.按键提示左{
+    float: left;
+    border: solid;
+    position: absolute;
+    left: -50%;
+    transition: 1.2s;
+}
+.按键提示右{
+    float: right;
+    border: solid;
+    position: absolute;
+    right: -50%;
+    transition: 1.2s;
+}
+.按键提示左,.按键提示右{
+    width: 600px;
+    height: 250px;
+    background-color: rgb(84, 204, 204);
+    margin-top: 10%;
+}
+.按键提示{
+    text-align: center;
+}
+/*开始*/
+.开始{
+    text-align: center;
+    font-size: 50px;
+    position: absolute;
+    top: -50%;
+    transition: 1.2s;
+}
+.开始>p{
+    font-size: large;
+}
+.回合{
+    position: absolute;
+    top: 10%;
+}
+.计时{
+    position: absolute;
+    top: 20%;
+}
+#inf1{
+    position: relative;
+    left: -100%;
+    transition: 0.5s;
+}
+#inf2{
+    position: relative;
+    right: -100%;
+    transition: 0.5s;
+}
+#inf1 h1{
+    position: relative;
+    transition: 0.5s;
+    left: 50%;
+}
+#inf2 h1{
+    position: relative;
+    transition: 0.5s;
+    right: 50%;
+}
+#draw{
+    position: absolute;
+    bottom: -50%;
+    transition: 0.5s;
+}
+#dead1{
+    position: absolute;
+    left: 30%;
+    bottom: -50%;
+    transition: 1s;
+}
+#dead2{
+    position: absolute;
+    right: 30%;
+    bottom: -50%;
+    transition: 1s;
+}

@@ -1,0 +1,36 @@
+*{
+    margin: 0 auto;
+}
+body{
+    background-image: url(../img/number.jpg);
+    background-size: 1280px;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: -100px;
+}
+/* 隐藏上下箭头 */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button { 
+    -webkit-appearance: none; 
+}
+input{width: 100px;}
+/*左右框*/
+.left{
+    float: left;
+}
+.right{
+    float:right;
+}
+.left,.right{
+    background-color: black;
+    height: 752px;
+    width: 8.4%;
+    display: inline-block;
+}
+div,h1,h2,h5{
+    text-align: center;
+}
+#playAgain{
+    display: none;
+    text-align: center;
+}

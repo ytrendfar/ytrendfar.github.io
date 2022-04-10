@@ -1,0 +1,30 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+html,body{
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+body{
+    display: flex;
+    /* background: linear-gradient(#99f,#f99); */
+    background: url(../img/mt.jpg) no-repeat;
+    flex-direction: column;
+}
+.search{
+    width: 400px;
+    border-radius: 20px;
+    height: 40px;
+    padding: 0px 10px;
+    border: none;
+    outline: none;
+}
+input::placeholder{
+    color: gray;
+    font-family:'Courier New', Courier, monospace;
+}
+.pointer{
+    cursor: pointer;
+}
