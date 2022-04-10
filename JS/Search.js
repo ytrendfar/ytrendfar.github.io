@@ -1,0 +1,6 @@
+function clearBackground(){
+    
+}
+function refreshBackground(){
+    
+}
