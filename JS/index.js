@@ -1,10 +1,6 @@
-var x = true;
 function Open(){
-    if(x){
-        document.getElementById("flexContent").style.display="block";
-        x=false;
-    }else{
-        document.getElementById("flexContent").style.display="none";
-        x=true;
-    }
-}          
+    document.getElementById("flexContent").setAttribute("style","top: 0%");
+}
+function exit(){
+    document.getElementById("flexContent").setAttribute("style","top: -100%");
+}
