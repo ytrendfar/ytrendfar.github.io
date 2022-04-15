@@ -82,6 +82,9 @@ h1,h2,p{
     font-size: 30px;
     
 }
+#body #note{
+    font-weight: 900;
+}
 #body a:hover{
     color:rgb(91, 227, 255);
     transition: 0.5s;
