@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="../img/icon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        *{
+            padding: 0%;
+            margin: 0%;
+        }
+        html{
+            height: 100%;
+        }
+        body{
+            height: 200%;
+            background: cornsilk;
+            transition: 2s;
+        }
+        .summer{
+            width: 600px;
+            transition: 1s;
+            border-radius: 50px;
+            margin: 100px;
+            z-index: 999;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+        .summer+h1{
+            display: inline-block;
+            width: 200px;
+            transition: 1s;
+            
+        }
+        .summer:hover {
+            transform: scale(1.2);
+            transition: 1s;
+            border-radius: 120px;
+        }
+        .summer:hover + h1{
+            
+            transition: 1s;
+        }
+        
+        
+    </style>
+</head>
+<body id="_body">
+    <div>
+        <img align="center" class="summer" onclick="change1()" src="../img/summer1.png">
+        <h1>dreamBattle</h1>
+        <audio id="m1" src="../music/dreamBattle.flac"></audio>
+    </div>
+    <div>
+        <img align="center" class="summer" onclick="change2()" src="../img/summer2.png">
+        <h1>Rain</h1>
+        <audio id="m2" src="../music/Rain.mp3"></audio>
+    </div>
+    <div>
+        <img align="center" class="summer" onclick="change3()" src="../img/summer3.png">
+        <h1>flowerDance</h1>
+        <audio id="m3" src="../music/flowerDance.flac"></audio>
+    </div>    
+</body>
+<script>
+    var x = true;
+    function change1(){
+        document.getElementById("_body").style.background = 'dodgerblue';
+        if(x){
+            document.getElementById("m1").play();
+            document.getElementById("m1").volume = 0.3;
+            x = false;
+        }
+        else{
+            document.getElementById("m1").pause();
+            document.getElementById("m2").pause();
+            document.getElementById("m3").pause();
+            x = true;
+        }
+    }
+    function change2(){
+        document.getElementById("_body").style.background = 'tomato';
+        if(x){
+            document.getElementById("m2").play();
+            document.getElementById("m2").volume = 0.3;
+            x = false;
+        }
+        else{
+            document.getElementById("m1").pause();
+            document.getElementById("m2").pause();
+            document.getElementById("m3").pause();
+            x = true;
+        }
+    }
+    function change3(){
+        document.getElementById("_body").style.background = 'green';
+        if(x){
+            document.getElementById("m3").play();
+            document.getElementById("m3").volume = 0.3;
+            x = false;
+        }
+        else{
+            document.getElementById("m1").pause();
+            document.getElementById("m2").pause();
+            document.getElementById("m3").pause();
+            x = true;
+        }
+    }
+</script>
+</html>
