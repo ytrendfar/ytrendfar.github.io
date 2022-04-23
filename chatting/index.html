@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Let's Chat</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font: 13px Helvetica, Arial;
+      background: #333;
+    }
+
+    div {
+      padding: 3px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    input {
+      border: 0;
+      padding: 10px;
+      width: 90%;
+      margin-right: .5%;
+    }
+
+    button {
+      width: 9%;
+      background: rgb(130, 224, 255);
+      border: none;
+      padding: 10px;
+    }
+
+    #messages {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      color: cornsilk;
+    }
+
+    #messages li {
+      padding: 5px 10px;
+    }
+
+  </style>
+  <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script defer>
+    const name = prompt('请输入您的昵称：');
+    var socket = io();
+
+    //创建添加元素的函数
+    function addLine(msg) {
+      $('#messages').append($('<li>').text(msg));
+    }
+
+
+    //发送昵称给后端
+    socket.emit("join", name)
+    //以将标题更改为更为容易辨识的文本
+    document.title = name + "的群聊"
+
+    //收到服务器发来的join事件时
+    socket.on("join", function (user) {
+      addLine(user + " 加入了群聊")
+    })
+
+    //接收到服务器发来的message事件
+    socket.on("message", function (msg) {
+      addLine(msg)
+    })
+
+    //让表单处理消息发送
+    
+    function send(){
+      var msg = $("#m").val();
+      socket.emit("message", name+': '+msg);
+      $("#m").val("");
+    }
+
+
+
+
+  </script>
+</head>
+
+<body>
+  <ul id="messages"></ul>
+  <div> 
+    <input type="text"  id="m" autocomplete="off" />
+    <button id="bt" onclick="send()">发送</button>
+  </div>
+
+</body>
+
+</html>
