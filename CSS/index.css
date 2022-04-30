@@ -43,10 +43,14 @@ h1,h2,p{
     font-size: 15px;
 }
 #header a{
+    margin-top: 0;
+    margin-bottom: 0;
+    display: inline-block;
+    height: 50px;
     transition: 0.5s;
 }
 #head a:hover{
-    color: #9ff;
+    color: #333;
     transition: 1s;
 }
 #head h1{ 
@@ -114,6 +118,19 @@ h1,h2,p{
 .container{
     max-width: 750px;
     margin: auto;
+}
+
+.rm{
+    color: rgb(192, 186, 178);
+    cursor: pointer;
+    position: absolute;
+    right: 25%;
+    font-weight: 400;
+    transition: 1s;
+    text-decoration: underline rgb(192, 186, 178);
+}
+.rm:hover{
+    color: #9ff;
 }
 
 
