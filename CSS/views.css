@@ -10,6 +10,11 @@ h1{
     color:cornsilk;
     margin-top: 20px;
 }
+hr{
+    color: rgb(53, 57, 59);
+    border: solid 1px;
+}
+
 
 
 #body{
@@ -30,6 +35,23 @@ h1{
     transition: 0.5s;
     width: 500px;
 }
+.goBack{
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: cornsilk;
+    cursor: pointer;
+    width: 100px;
+    margin: auto;
+    border: 1px solid;
+    transition: 0.5s;
+}
+.goBack:hover{
+    transform:translateX(-20px);
+    transition: 0.5s;
+    color: rgb(91, 227, 255);
+}
+
 
 
 

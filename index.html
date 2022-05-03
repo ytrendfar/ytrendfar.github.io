@@ -1,73 +1,101 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="icon" type="image/x-icon" href="img/icon.ico">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Welcome</title>
-        <link href="CSS/index.css" rel="stylesheet" >
-    </head>
-    <body>
-        <div id="flexContent" hidden>
-            <a href="#" onclick="exit()">HOME</a>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="img/icon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link href="CSS/index.css" rel="stylesheet">
+    <script>
+
+        window.onload = function () {
+
+
+            function Open() {
+                document.getElementById("flexContent").setAttribute("style", "top: 0%");
+            }
+            function exit() {
+                document.getElementById("flexContent").setAttribute("style", "top: -100%");
+            }
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <div id="flexContent" hidden>
+        <a href="#" onclick="exit()">HOME</a>
+        <a href="game.html">GAMES</a>
+        <a href="notes.html" onclick="exit()">NOTES</a>
+        <a href="views.html">VIEWS</a>
+    </div>
+    <div id="head">
+        <a href="Young.html">By Young</a>
+        <div id="flexBox" hidden>
+            <div onclick="Open()">
+                <img src="img/open.png">
+            </div>
+        </div>
+        <hr hidden id="hr">
+        <div id="header">
+            <a href="#">HOME</a>
             <a href="game.html">GAMES</a>
-            <a href="#note" onclick="exit()">NOTES</a>
+            <a href="notes.html">NOTES</a>
             <a href="views.html">VIEWS</a>
         </div>
-        <div id="head">
-            <a href="Young.html">By Young</a>
-            <div id="flexBox" hidden>
-                <div onclick="Open()">
-                    <img src="img/open.png">
-                </div>
-            </div>
-            <hr hidden id="hr">
-            <div id="header">
-                <a href="#">HOME</a>
-                <a href="game.html">GAMES</a>
-                <a href="#note">NOTES</a>
-                <a href="views.html">VIEWS</a>
-            </div>
-            <br><br><br>
-            <h1>Simple Block</h1>
-            <h2>Now Developing...</h2>
+        <br><br><br>
+        <h1>Simple Block</h1>
+        <h2>Now Developing...</h2>
+    </div>
+    <div id="body">
+        <br><br>
+        <p class="title">Notes</p>
+        <br>
+        <div class="container">
+            <a href="notes/HTML.html">HTML Note</a>
+            <hr>
         </div>
-        <div id="body">
-            <br><br>
-            <p id="note">Notes</p>
-            <br>
-            <div class="container">
-                <a href="notes/HTML.html">HTML Note</a>
-                <hr>
-            </div>
-            <div class="container">
-                <a href="notes/CSS.html">CSS Note</a>
-                <hr>
-            </div>
-            <div class="container">
-                <a href="notes/JS.html">JavaScript Note</a>
-                <hr>
-            </div>
-            <div class="container">
-                <a href="notes/Vue.html">Vue Note</a>
-                <hr>
-            </div>
-            <div class="container">
-                <a href="notes/MySQL.html">MySQL Note</a>
-                <hr>
-            </div>
-            <h6 class="rm"><a href="notes.html">Read More ...</a></h6>
+        <div class="container">
+            <a href="notes/CSS.html">CSS Note</a>
+            <hr>
         </div>
+        <div class="container">
+            <a href="notes/JS.html">JavaScript Note</a>
+            <hr>
+        </div>
+        <div class="container">
+            <a href="notes/Vue.html">Vue Note</a>
+            <hr>
+        </div>
+        <div class="container">
+            <a href="notes/git.html">Git Note</a>
+            <hr>
+        </div>
+        <h6 class="rm"><a href="notes.html">Read More ...</a></h6>
+        <br><br>
+        <br><br>
+        <p class="title">Views</p>
+        <br>
+        <div class="container">
+            <a href="views/view1.html">About ES6 Declare</a>
+            <hr>
+        </div>
+        <h6 class="rm"><a href="views.html">Read More ...</a></h6>
+
+    </div>
 
 
-        <hr>
-        <div id="foot">
-            <br>
-            <a href="https://github.com/ytrendfar/ytrendfar.github.io" target="_blank"><img src="img/link.png"></a>
-            <p>© 2022 YTrendFar</p>
-            <p>The theme is modeled after <a href="https://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/" target="_blank">Clean Blog</a></p>
-            <p>Adapted by <a href="Young.html">Young</a></p>
-        </div>
-    </body>
-    <script src="JS/index.js"></script>
+
+    <div id="foot">
+        <hr><br>
+        <a href="https://github.com/ytrendfar/ytrendfar.github.io" target="_blank"><img src="img/link.png"></a>
+        <p>© 2022 YTrendFar</p>
+        <p>The theme is modeled after <a href="https://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/"
+                target="_blank">Clean Blog</a></p>
+        <p>Adapted by <a href="Young.html">Young</a></p>
+    </div>
+</body>
+
 </html>

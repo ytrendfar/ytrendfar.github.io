@@ -30,9 +30,10 @@ h1,h2,p{
     background-size: auto;
     background-position: bottom center;
     background-color: aquamarine;  
-    filter: saturate(1.2) contrast(1.2);
+    filter: saturate(1.2) contrast(1.2) blur(0px);
     transition: 2s;
 }
+
 #head>a{
     font-size: 25px;
     transition: 0.5s;
@@ -86,7 +87,7 @@ h1,h2,p{
     font-size: 30px;
     
 }
-#body #note{
+#body .title{
     font-weight: 900;
 }
 #body a:hover{
