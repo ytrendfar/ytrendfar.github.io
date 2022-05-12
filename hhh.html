@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>voice</title>
+    <style>
+        *{
+            text-align: center;
+            margin: 0%;
+            padding: 0%;
+        }
+        .voice{
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            margin: auto;
+            line-height: 100px;
+            cursor: pointer;
+        }
+        .voice:active{
+            background-color: rgb(215, 245, 255);
+        }
+
+    </style>
+    <script>
+
+        window.onload = function(){
+
+            document.getElementsByClassName('voice')[0].onclick = function(){
+
+                document.getElementById('derVoice').play();
+
+            }
+
+
+        }
+
+
+    </script>
+</head>
+<body>
+    <div class="voice">
+        入一下
+        <audio src="music/derの声.mp3" id="derVoice"></audio>
+    </div>
+    
+</body>
+</html>
