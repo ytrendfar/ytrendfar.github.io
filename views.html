@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/x-icon" href="img/view.ico">
@@ -7,7 +8,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Views</title>
     <link rel="stylesheet" href="CSS/views.css">
+    <script>
+        window.onload = function () {
+
+            let icon = document.getElementById('icon')
+            icon.addEventListener('mouseover', function () {
+                this.children[0].setAttribute('fill', 'rgb(91, 227, 255)')
+            })
+            icon.addEventListener('mouseout', function () {
+                this.children[0].setAttribute('fill', '#fff')
+            })
+
+        }
+    </script>
 </head>
+
 <body>
     <h1>这里保存了我的一些零碎知识</h1><br>
     <div id="body">
@@ -20,18 +35,23 @@
         <a href="">#</a>
     </div>
     <br><br>
-    <a class="goBack" href="index.html"><-- 返回</a>
-    <br>
-
-
-
-
-    <div id="foot">
-        <hr><br>
-        <a href="https://github.com/ytrendfar/ytrendfar.github.io" target="_blank"><img src="img/link.png"></a>
-        <p>© 2022 YTrendFar</p>
-        <p>The theme is modeled after <a href="https://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/" target="_blank">Clean Blog</a></p>
-        <p>Adapted by <a href="Young.html">Young</a></p>
-    </div>
+    <a class="goBack" href="index.html">
+        <-- 返回</a>
+        <br>
+        <div id="foot">
+            <hr><br>
+            <a href="https://github.com/ytrendfar/ytrendfar.github.io" target="_blank"><svg id="icon"
+                    t="1653473804797" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="2566" width="64" height="64">
+                    <path
+                        d="M512 128C299.872 128 128 299.872 128 512c0 169.6 110.016 313.6 262.624 364.384 19.264 3.52 26.24-8.256 26.24-18.496 0-9.152-0.352-33.28-0.48-65.28-106.88 23.136-129.376-51.488-129.376-51.488-17.504-44.384-42.624-56.256-42.624-56.256-34.88-23.744 2.624-23.232 2.624-23.232 38.496 2.752 58.752 39.488 58.752 39.488 34.24 58.752 89.856 41.76 111.744 32 3.52-24.864 13.504-41.76 24.384-51.36-85.248-9.632-174.88-42.624-174.88-189.76 0-42.016 15.008-76.256 39.488-103.136-3.872-9.6-17.12-48.736 3.744-101.6 0 0 32.256-10.24 105.632 39.36A367.584 367.584 0 0 1 512 313.76c32.64 0.128 65.504 4.352 96.128 12.864 73.376-49.6 105.504-39.36 105.504-39.36 20.992 52.864 7.872 92 3.84 101.6 24.64 26.88 39.392 61.12 39.392 103.136 0 147.52-89.728 179.872-175.232 189.504 13.76 11.744 25.984 35.232 25.984 71.008 0 51.36-0.352 92.736-0.352 105.376 0 10.24 6.848 22.24 26.368 18.496C786.112 825.504 896 681.6 896 512c0-212.128-171.872-384-384-384z"
+                        p-id="2567" fill="#fff"></path>
+                </svg></a>
+            <p>© 2022 YTrendFar</p>
+            <p>The theme is modeled after <a href="https://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/"
+                    target="_blank">Clean Blog</a></p>
+            <p>Adapted by <a href="Young.html">Young</a></p>
+        </div>
 </body>
+
 </html>
