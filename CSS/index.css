@@ -26,12 +26,21 @@ h1,h2,p{
 
 #head{
     height: 22.5%;
-    background: url(../img/mt.jpg) no-repeat;
+    /* background: url(../img/mt.jpg) no-repeat;
     background-size: auto;
-    background-position: bottom center;
+    background-position: bottom center; */
     background-color: aquamarine;  
-    filter: saturate(1.2) contrast(1.2) blur(0px);
     transition: 2s;
+    overflow: hidden;
+    filter: saturate(1.2) contrast(1.2) blur(0px);
+}
+.img{
+    position: absolute;
+    z-index: -1;
+    bottom: -20px;
+    left: auto;
+    filter: saturate(1.2) contrast(1.2) blur(0px);
+    transition: all 1s;
 }
 
 #head>a{
@@ -153,12 +162,6 @@ h1,h2,p{
 #foot a:hover{
     color: rgb(91, 227, 255);
     transition: 1s;
-}
-#foot img{
-    height: 50px;
-}
-#foot img:hover{
-    content: url(../img/hover.png);
 }
 
 
