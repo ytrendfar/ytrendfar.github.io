@@ -23,6 +23,23 @@
         .voice:active{
             background-color: rgb(215, 245, 255);
         }
+        #der{
+            position: absolute;
+            width: 50px;
+        }
+        .box{
+            position: absolute;
+            width: 200px;
+            left: 650px;
+            top: -40px;
+        }
+        #con{
+            position: fixed;
+            bottom: 10px;
+            text-align: center;
+            width: 100%;
+            font-size: 4vw;
+        }
 
     </style>
     <script>
@@ -34,18 +51,61 @@
                 document.getElementById('derVoice').play();
 
             }
+            let der = document.getElementById('der')
+            document.addEventListener('mousemove',function(event){
+                let x = event.pageX
+                let y = event.pageY
+                der.style.left = x + 5 + 'px'
+                der.style.top = y + 5 + 'px'
+                event.preventDefault();
+            })
 
 
+            //拖拽
+
+            //鼠标点击时
+            let box = document.getElementsByClassName('box')[0];
+            box.onmousedown = function(event){
+                
+                //调整
+                let x = event.clientX - box.offsetLeft;
+                let y = event.clientY - box.offsetTop;
+
+
+                //鼠标移动时
+                document.onmousemove = function(event){
+
+                    let left = event.clientX;
+                    let top = event.clientY;
+                    box.style.left = left - x +'px';
+                    box.style.top = top - y +'px';
+                    event.preventDefault();
+
+                }
+
+                //鼠标松开
+                document.onmouseup = function(){
+                    //取消onmousemove
+                    document.onmousemove = null;
+                    //取消自己的事件
+                    document.onmouseup = null;
+                }
+
+
+            }
         }
 
 
     </script>
 </head>
 <body>
+    <img src="img/der.png" class="box">
+    <img src="img/der.png" id="der">
     <div class="voice">
         入一下
         <audio src="music/derの声.mp3" id="derVoice"></audio>
     </div>
+    <div id="con">！！！请把永强哥哥放在合适的位置哦！！！</div>
     
 </body>
 </html>
