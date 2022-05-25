@@ -74,9 +74,6 @@ hr{
     color: rgb(91, 227, 255);
     transition: 1s;
 }
-#foot img{
-    height: 50px;
-}
-#foot img:hover{
-    content: url(../img/hover.png);
+path{
+    transition: 0.5s;
 }
