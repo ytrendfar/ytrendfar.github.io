@@ -14,8 +14,8 @@
 
         body {
             background-color: #333;
-            transition: 0.5s;
             overflow-x: hidden;
+            transition: 0.5s;
         }
 
         * {
@@ -25,22 +25,6 @@
 
         .icon {
             position: absolute;
-        }
-
-        #icon-1 {
-            right: -100px;
-            cursor: pointer;
-            transition: 0.5s;
-        }
-
-        #icon-2 {
-            right: 0px;
-            cursor: pointer;
-            transition: 0.5s;
-        }
-
-        #icon-3 {
-            right: 75px;
             cursor: pointer;
             transition: 0.5s;
         }
@@ -48,43 +32,51 @@
         path {
             transition: 0.5s;
         }
+
+        #iconSun {
+            right: -100px;
+        }
+
+        #iconMoon {
+            right: 0px;
+        }
+
+        #iconGithub {
+            right: 75px;
+        }
+
+        #navigation {
+            left: 0;
+            margin: 0 10px;
+            width: 44px;
+        }
+
+        #x {
+            left: -100px;
+            z-index: 10;
+        }
+
+        .lefter{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            left: -100%;
+            transition: 1.2s;
+            color: #fff;
+            background-color: #333;
+        }
     </style>
     <script>
 
         let isWhite = false
 
-        window.onload = function () {
-
-            //  实现夜间模式转换
-
-        
-            //获取按钮元素
-            let icon1 = document.getElementById('icon-1')
-            let icon2 = document.getElementById('icon-2')
-            let icon3 = document.getElementById('icon-3')
-            //绑定事件
-            icon1.addEventListener('click', function () {
-                document.body.style.backgroundColor = '#333'
-                icon1.style.right = '-100px'
-                icon2.style.right = '0px'
-                icon3.children[0].setAttribute('fill', '#fff')
-                isWhite = false
+        // 我想写个函数用来绑定悬浮变色事件,当然只能是svg标签
+        // 参数分别是要变色的svg标签和要变成的颜色（字符串）
+        function colorTranslate(obj, color) {
+            obj.addEventListener('mouseover', function () {
+                this.children[0].setAttribute('fill', color)
             })
-            icon2.addEventListener('click', function () {
-                document.body.style.backgroundColor = '#fff'
-                icon1.style.right = '0px'
-                icon2.style.right = '-100px'
-                icon3.children[0].setAttribute('fill', '#333')
-                isWhite = true
-            })
-            icon3.addEventListener('click',function(){
-                window.open('https://github.com/ytrendfar/ytrendfar.github.io');
-            })
-            // 悬浮
-            icon3.addEventListener('mouseover', function () {
-                this.children[0].setAttribute('fill', 'rgb(91, 227, 255)')
-            })
-            icon3.addEventListener('mouseout', function () {
+            obj.addEventListener('mouseout', function () {
                 if (isWhite) {
                     this.children[0].setAttribute('fill', '#333')
                 }
@@ -92,6 +84,73 @@
                     this.children[0].setAttribute('fill', '#fff')
                 }
             })
+            iconSun.addEventListener('click', function () {
+                obj.children[0].setAttribute('fill', '#fff')
+            })
+            iconMoon.addEventListener('click', function () {
+                obj.children[0].setAttribute('fill', '#333')
+            })
+        }
+
+
+
+
+        window.onload = function () {
+
+            //  实现夜间模式转换
+
+
+            //获取按钮元素
+            let iconSun = document.getElementById('iconSun')
+            let iconMoon = document.getElementById('iconMoon')
+            let iconGithub = document.getElementById('iconGithub')
+            let navigation = document.getElementById('navigation')
+            let x = document.getElementById('x')
+            let lefter = document.getElementsByClassName('lefter')[0]
+
+            //绑定事件
+
+            //转换为夜间模式
+            iconSun.addEventListener('click', function () {
+                document.body.style.backgroundColor = '#333'
+                iconSun.style.right = '-100px'
+                iconMoon.style.right = '0px'
+                // document.getRootNode.style.color = '#fff'
+                isWhite = false
+
+            })
+            //转换为常规模式
+            iconMoon.addEventListener('click', function () {
+                document.body.style.backgroundColor = '#fff'
+                iconSun.style.right = '0px'
+                iconMoon.style.right = '-100px'
+                // document.getRootNode.style.color = '#333'
+                isWhite = true
+            })
+            //导航栏打开
+            navigation.addEventListener('click', function () {
+                x.style.left = '0px'
+                navigation.style.left = '-100px'
+                lefter.style.left = '0px'
+            })
+            //导航栏关闭
+            x.addEventListener('click', function () {
+                navigation.style.left = '0px'
+                x.style.left = '-100px'
+                lefter.style.left = '-100%'
+            })
+            //超链接
+            iconGithub.addEventListener('click', function () {
+                window.open('https://github.com/ytrendfar/ytrendfar.github.io');
+            })
+            // 悬浮
+            colorTranslate(iconGithub, 'rgb(91, 227, 255)')
+            colorTranslate(iconMoon, '#f4ea2a')
+            colorTranslate(iconSun, '#FF9900')
+            colorTranslate(navigation, 'rgb(91, 227, 255)')
+            colorTranslate(x, 'rgb(91, 227, 255)')
+
+
         }
 
     </script>
@@ -100,26 +159,41 @@
 <body>
     <!-- 上面的一些东西 -->
     <div class="header">
-        <svg id="icon-1" t="1653470799582" class="icon" viewBox="0 0 1024 1024" version="1.1"
+        <svg id="iconSun" t="1653470799582" class="icon" viewBox="0 0 1024 1024" version="1.1"
             xmlns="http://www.w3.org/2000/svg" p-id="1698" width="64" height="64">
             <path
                 d="M298.7 676.2l-52.3 52.3c-9.6 9.6-9.6 25.3 0 34.9 9.6 9.6 25.3 9.6 34.9 0l52.3-52.3c9.6-9.6 9.6-25.3 0-34.9-9.6-9.6-25.3-9.6-34.9 0z m-15-372.7c9.7 9.7 25.5 9.7 35.2 0 9.7-9.7 9.7-25.5 0-35.2l-52.8-52.8c-9.7-9.7-25.5-9.7-35.2 0-9.7 9.7-9.7 25.5 0 35.2l52.8 52.8z m-69.9 168.8h-74.7c-13.8 0-24.9 11.1-24.9 24.9 0 13.8 11.2 24.9 24.9 24.9h74.7c13.8 0 24.9-11.1 24.9-24.9 0-13.7-11.2-24.9-24.9-24.9z m298.8-249c13.8 0 24.9-11.1 24.9-24.9v-74.7c0-13.8-11.1-24.9-24.9-24.9s-24.9 11.1-24.9 24.9v74.7c0 13.8 11.2 24.9 24.9 24.9z m239.6 69.2l52.3-52.3c9.6-9.6 9.6-25.3 0-34.9-9.6-9.6-25.3-9.6-34.9 0l-52.3 52.3c-9.6 9.6-9.6 25.3 0 34.9 9.6 9.7 25.3 9.7 34.9 0z m133.9 179.8h-74.7c-13.8 0-24.9 11.1-24.9 24.9 0 13.8 11.1 24.9 24.9 24.9h74.7c13.8 0 24.9-11.1 24.9-24.9 0-13.7-11.1-24.9-24.9-24.9zM741.5 690.9c-9.7-9.7-25.5-9.7-35.2 0-9.7 9.7-9.7 25.5 0 35.2l52.8 52.8c9.7 9.7 25.5 9.7 35.2 0 9.7-9.7 9.7-25.5 0-35.2l-52.8-52.8zM512.6 273c-123.9 0-224.3 100.4-224.3 224.3s100.4 224.3 224.3 224.3 224.3-100.4 224.3-224.3S636.5 273 512.6 273z m0 498.1c-13.8 0-24.9 11.1-24.9 24.9v74.7c0 13.8 11.1 24.9 24.9 24.9s24.9-11.1 24.9-24.9V796c0-13.7-11.1-24.9-24.9-24.9z"
                 p-id="1699" fill="#333"></path>
         </svg>
-        <svg id="icon-2" t="1653473025398" class="icon" viewBox="0 0 1024 1024" version="1.1"
+        <svg id="iconMoon" t="1653473025398" class="icon" viewBox="0 0 1024 1024" version="1.1"
             xmlns="http://www.w3.org/2000/svg" p-id="1506" width="64" height="64">
             <path
                 d="M505.4 878.6c-196.7 0-358-150.9-374.9-343.1 1-18.6 16.1-33.4 34.9-33.4 10.8 0 20.5 4.8 26.9 12.4 0.2 0.3 0.5 0.1 0.5-0.7 41.6 44.2 100.5 71.9 166.1 71.9 127.1 0 230.1-103 230.1-230.1 0-66.1-28-125.1-72.6-166.8 0.1-0.1 0.5-0.1 0.3-0.3-7-6.5-11.4-15.7-11.4-26.1 0-19 14.9-34.1 33.7-35.3 192.1 17.1 342.9 178.3 342.9 375 0 208-168.5 376.5-376.5 376.5z"
                 p-id="1507" fill="#fff"></path>
         </svg>
-        <svg id="icon-3" t="1653473804797" class="icon" viewBox="0 0 1024 1024" version="1.1"
+        <svg id="iconGithub" t="1653473804797" class="icon" viewBox="0 0 1024 1024" version="1.1"
             xmlns="http://www.w3.org/2000/svg" p-id="2566" width="64" height="64">
             <path
                 d="M512 128C299.872 128 128 299.872 128 512c0 169.6 110.016 313.6 262.624 364.384 19.264 3.52 26.24-8.256 26.24-18.496 0-9.152-0.352-33.28-0.48-65.28-106.88 23.136-129.376-51.488-129.376-51.488-17.504-44.384-42.624-56.256-42.624-56.256-34.88-23.744 2.624-23.232 2.624-23.232 38.496 2.752 58.752 39.488 58.752 39.488 34.24 58.752 89.856 41.76 111.744 32 3.52-24.864 13.504-41.76 24.384-51.36-85.248-9.632-174.88-42.624-174.88-189.76 0-42.016 15.008-76.256 39.488-103.136-3.872-9.6-17.12-48.736 3.744-101.6 0 0 32.256-10.24 105.632 39.36A367.584 367.584 0 0 1 512 313.76c32.64 0.128 65.504 4.352 96.128 12.864 73.376-49.6 105.504-39.36 105.504-39.36 20.992 52.864 7.872 92 3.84 101.6 24.64 26.88 39.392 61.12 39.392 103.136 0 147.52-89.728 179.872-175.232 189.504 13.76 11.744 25.984 35.232 25.984 71.008 0 51.36-0.352 92.736-0.352 105.376 0 10.24 6.848 22.24 26.368 18.496C786.112 825.504 896 681.6 896 512c0-212.128-171.872-384-384-384z"
                 p-id="2567" fill="#fff"></path>
         </svg>
+        <svg id="navigation" t="1653486468748" class="icon" viewBox="0 0 1024 1024" version="1.1"
+            xmlns="http://www.w3.org/2000/svg" p-id="1186" width="64" height="64">
+            <path
+                d="M569.6 19.2c-32-25.6-76.8-25.6-108.8 0l-448 422.4c-12.8 19.2-19.2 44.8 0 64 12.8 19.2 38.4 19.2 57.6 0l6.4-6.4v441.6c0 44.8 38.4 83.2 83.2 83.2h236.8v-249.6c0-32 25.6-57.6 57.6-57.6h115.2c32 0 57.6 25.6 57.6 57.6V1024h243.2c44.8 0 83.2-38.4 83.2-83.2V505.6c19.2 19.2 44.8 12.8 57.6 0 12.8-19.2 12.8-44.8 0-57.6L569.6 19.2z"
+                p-id="1187" fill="#fff"></path>
+        </svg>
+        <svg id="x" t="1653488494069" class="icon" viewBox="0 0 1024 1024" version="1.1"
+            xmlns="http://www.w3.org/2000/svg" p-id="2317" width="64" height="64">
+            <path
+                d="M500.512 468.288l313.76-313.76c13.312-13.28 34.944-13.248 48.32 0.128 13.472 13.472 13.44 35.008 0.128 48.32l-313.76 313.76 313.824 313.824c13.312 13.312 13.344 34.848-0.128 48.32-13.376 13.376-35.008 13.408-48.32 0.128l-313.824-313.824-313.824 313.824c-13.28 13.312-34.944 13.248-48.32-0.128-13.472-13.472-13.44-35.008-0.128-48.32l313.824-313.824-313.76-313.76c-13.312-13.312-13.344-34.848 0.128-48.32 13.376-13.376 35.008-13.408 48.32-0.128l313.76 313.76z"
+                p-id="2318" fill="#ffffff"></path>
+        </svg>
     </div>
-    <a href="Young/aSpace.html">My Space</a>
+    <div class="lefter" align="center">
+        <h1>TEST</h1>
+        <h1>LABEL</h1>
+    </div>
 </body>
 
 </html>
